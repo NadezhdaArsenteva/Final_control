@@ -5,43 +5,49 @@ using System;
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        // Задаем первоначальный массив строк
-        string[] initialArray = { "Hello", "2", "world", ":-)" };
-        // Вызываем метод для формирования нового массива
-        string[] filteredArray = FilterArray(initialArray);
+        // Задаем исходный массив строк
+        string[] inputArray = { "Hello", "2", "world", ":-)", "1234", "1567", "-2", "computer science", "Russia", "Denmark", "Kazan" };
 
-        // Вывод результата
-        Console.WriteLine("[" + string.Join(", ", initialArray) + "] → [" + string.Join(", ", filteredArray) + "]");
+        // Вызываем метод для формирования нового массива
+        string[] resultArray = GetNewArray(inputArray);
+
+        // Выводим новый массив
+        Console.WriteLine("Новый массив:");
+        foreach (string str in resultArray)
+        {
+            Console.Write($"{str} ");
+        }
+        Console.ReadLine();
     }
 
-    static string[] FilterArray(string[] array)
+    static string[] GetNewArray(string[] inputArray)
     {
-        // Считаем, сколько элементов удовлетворяют условию
+        // Подсчитываем количество строк, длина которых меньше или равна 3 символам
         int count = 0;
-        foreach (string item in array)
+        foreach (string str in inputArray)
         {
-            if (item.Length <= 3)
+            if (str.Length <= 3)
             {
                 count++;
             }
         }
 
-        // Создаем новый массив подходящего размера
-        string[] result = new string[count];
+        // Создаем новый массив нужной длины
+        string[] newArray = new string[count];
+        int j = 0;
 
-        // Заполняем новый массив подходящими элементами
-        int index = 0;
-        foreach (string item in array)
+        // Копируем подходящие строки в новый массив
+        foreach (string str in inputArray)
         {
-            if (item.Length <= 3)
+            if (str.Length <= 3)
             {
-                result[index] = item;
-                index++;
+                newArray[j] = str;
+                j++;
             }
         }
 
-        return result;
+        return newArray;
     }
 }
