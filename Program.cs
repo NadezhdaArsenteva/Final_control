@@ -3,70 +3,45 @@
 
 using System;
 
-namespace ArrayExample
+class Program
 {
-    class Program
+    static void Main()
     {
-        static void Main(string[] args)
+        // Задаем первоначальный массив строк
+        string[] initialArray = { "Hello", "2", "world", ":-)" };
+        // Вызываем метод для формирования нового массива
+        string[] filteredArray = FilterArray(initialArray);
+
+        // Вывод результата
+        Console.WriteLine("[" + string.Join(", ", initialArray) + "] → [" + string.Join(", ", filteredArray) + "]");
+    }
+
+    static string[] FilterArray(string[] array)
+    {
+        // Считаем, сколько элементов удовлетворяют условию
+        int count = 0;
+        foreach (string item in array)
         {
-            // Ввод исходного массива строк с клавиатуры
-            Console.WriteLine("Введите строки через запятую:");
-            string input = Console.ReadLine();
-            string[] initialArray = input.Split(',');
-
-            // Создание нового массива для строк длиной <= 3 символа
-            string[] resultArray = GetShortStringsArray(initialArray);
-
-            // Вывод результирующего массива
-            Console.WriteLine("Результирующий массив:");
-            if (resultArray.Length == 0)
+            if (item.Length <= 3)
             {
-                Console.WriteLine("[]");
+                count++;
             }
-            else
-            {
-                Console.Write("[");
-                for (int i = 0; i < resultArray.Length; i++)
-                {
-                    Console.Write($"\"{resultArray[i]}\"");
-                    if (i < resultArray.Length - 1)
-                    {
-                        Console.Write(", ");
-                    }
-                }
-                Console.Write("]");
-            }
-
-            Console.ReadLine();
         }
 
-        static string[] GetShortStringsArray(string[] inputArray)
+        // Создаем новый массив подходящего размера
+        string[] result = new string[count];
+
+        // Заполняем новый массив подходящими элементами
+        int index = 0;
+        foreach (string item in array)
         {
-            // Подсчитываем количество строк длиной <= 3 символа
-            int shortStringsCount = 0;
-            foreach (string str in inputArray)
+            if (item.Length <= 3)
             {
-                if (str.Length <= 3)
-                {
-                    shortStringsCount++;
-                }
+                result[index] = item;
+                index++;
             }
-
-            // Создаем новый массив нужной длины
-            string[] resultArray = new string[shortStringsCount];
-
-            // Заполняем новый массив строками длиной <= 3 символа
-            int index = 0;
-            foreach (string str in inputArray)
-            {
-                if (str.Length <= 3)
-                {
-                    resultArray[index] = str;
-                    index++;
-                }
-            }
-
-            return resultArray;
         }
+
+        return result;
     }
 }
