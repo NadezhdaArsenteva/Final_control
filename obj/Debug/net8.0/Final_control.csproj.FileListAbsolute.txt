@@ -1,0 +1,14 @@
+D:\GB\Git Итоговый\Final_control\bin\Debug\net8.0\Final_control.exe
+D:\GB\Git Итоговый\Final_control\bin\Debug\net8.0\Final_control.deps.json
+D:\GB\Git Итоговый\Final_control\bin\Debug\net8.0\Final_control.runtimeconfig.json
+D:\GB\Git Итоговый\Final_control\bin\Debug\net8.0\Final_control.dll
+D:\GB\Git Итоговый\Final_control\bin\Debug\net8.0\Final_control.pdb
+D:\GB\Git Итоговый\Final_control\obj\Debug\net8.0\Final_control.GeneratedMSBuildEditorConfig.editorconfig
+D:\GB\Git Итоговый\Final_control\obj\Debug\net8.0\Final_control.AssemblyInfoInputs.cache
+D:\GB\Git Итоговый\Final_control\obj\Debug\net8.0\Final_control.AssemblyInfo.cs
+D:\GB\Git Итоговый\Final_control\obj\Debug\net8.0\Final_control.csproj.CoreCompileInputs.cache
+D:\GB\Git Итоговый\Final_control\obj\Debug\net8.0\Final_control.dll
+D:\GB\Git Итоговый\Final_control\obj\Debug\net8.0\refint\Final_control.dll
+D:\GB\Git Итоговый\Final_control\obj\Debug\net8.0\Final_control.pdb
+D:\GB\Git Итоговый\Final_control\obj\Debug\net8.0\Final_control.genruntimeconfig.cache
+D:\GB\Git Итоговый\Final_control\obj\Debug\net8.0\ref\Final_control.dll
